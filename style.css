@@ -1,57 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
 
-    body {
-        background: #fff;
-        margin: 0;
-        padding: 0;
-        background-image: url('download.jpg');
+:root {
+    --primary-color: #1a237e;
+    --accent-color: #c0392b;
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+    --gold: #d4af37;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('./images/rohit-sharma1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    /* Reduced from 1.5rem */
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--gold);
+}
+
+.quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--accent-color);
+    padding: 2rem;
+    position: relative;
+}
+
+.quote::before,
+.quote::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+}
+
+.quote::before {
+    top: -10px;
+    left: 0;
+}
+
+.quote::after {
+    bottom: -30px;
+    right: 0;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.legacy p {
+    font-size: 1.2rem;
+    line-height: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.1rem;
+}
+
+.social-media {
+    padding: 4rem 0;
+    background-color: var(--light-bg);
+}
+
+.twitter-embed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 550px;
+}
+
+.twitter-embed iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
     }
-    
-    .box {
-        background: rgb(217, 223, 40);
-        border: 2px solid #d62828;
-        margin: 10px;
-        padding: 0;
+
+    .hero-content p {
+        font-size: 1rem;
     }
-    
-    .header h1 {
-        color: red;
-        text-align: center;
-        font-family: Arial, sans-serif;
-        margin: 10px 0;
+
+    h2 {
+        font-size: 2.5rem;
     }
-    
-    .paragraph p {
-        color: #e8d612;
-        text-align: center;
-        font-size: 20px;
-        margin: 10px 0;
-        color :#0c0c0c;
-        
+
+    .quote {
+        font-size: 1.5rem;
     }
-    
-    .outer {
-        padding: 20px 0 20px 0;
+
+    .timeline-item {
+        padding: 1.5rem;
     }
-    
-    .inner {
-        background: rgb(126, 217, 147);
-        border: 2px solid #0c0c0c;
-        margin: 10px 20px;
-        padding: 20px 0;
-        
-        
-    }
-    
-    .inner p {
-        color: #4caf50;
-        text-align: center;
-        font-size: 20px;
-        margin: 0;
-        color :#0c0c0c;
-    }
-    
-    .inner.empty {
-        height: 30px;
-        padding: 0;
-    }
-    
+}
